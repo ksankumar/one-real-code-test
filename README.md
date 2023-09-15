@@ -1,70 +1,46 @@
-# Front End Interview Project
+# Getting Started with Create React App
 
-Hello! If you're reading this, that means you've passed our initial phone screen. Congrats! We're excited to get to know
-you more and see if you'd be a good fit for Real.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-We would like you to implement the following project to help us assess your real-world programming knowledge.
+## Available Scripts
 
-## The Project
+In the project directory, you can run:
 
-We're going to create an application that uses the public Github API to render Github users and display information
-about their account.
+### `npm start`
 
-The application will consist of two pages:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-1. A Home Page, where I can see a list of users.
-2. A User detail page, where I can view specific information for a user.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-The home page will query the [users](https://api.github.com/users) endpoint and render each user. We should:
+### `npm test`
 
-- show their avatar
-- show their username
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-When I click on a user, I will be taken to a dedicated user detail page. On that page, I should see:
+### `npm run build`
 
-- their repos, which is the main content of the page.
-- their organizations
-- their first 5 followers, and include a count of total followers.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Github provides a rate limit for API users without authentication to a max of 60 requests per hour. You may want to mock
-the response or use a personal access token to fetch the API.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-We have provided you with a **create-react-app** template project, however, please feel free to use whatever
-technologies / frameworks / libraries that you are most comfortable with. We just ask that **this be implemented in
-React**, and not in another framework, like Vue/Angular/Ember/etc.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-**Note:** Please add tests! The project will be considered incomplete if you do not have any tests written.
+### `npm run eject`
 
-## What are we looking for?
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Some questions to think about:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- How can you make your code reusable?
-- How can we adhere to proper separation of concerns?
-- Are we using modern development practices?
-- Is my page mobile responsive?
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-We would also like to consider the following:
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-- How can I make it easy for any engineer to create a detail page?
-- How can I handle error cases, like 404s, automatically?
-- All in all: **how can I construct the beginnings of a _system_ that will make other engineers' lives easier?**
+## Learn More
 
-## Your Submission
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-After you have implemented the two pages, please write an overview of what you have implemented, what were any tradeoffs
-you made, and how you would extend this if you had more time. Please include this in the OVERVIEW.md file.
-
-## Conclusion
-
-Please feel free to reach out to the recruiter if you have any questions or if anything is unclear. We're excited to see
-what you come up with! Good luck!
-## License
-
-At CodeScreen, we strongly value the integrity and privacy of our assessments. As a result, this repository is under exclusive copyright, which means you **do not** have permission to share your solution to this test publicly (i.e., inside a public GitHub/GitLab repo, on Reddit, etc.). <br>
-
-## Submitting your solution
-
-Please push your changes to the `main branch` of this repository. You can push one or more commits. <br>
-
-Once you are finished with the task, please click the `Submit Solution` link on <a href="https://app.codescreen.com/candidate/6d9752eb-40f1-415e-b333-a743404016ad" target="_blank">this screen</a>.
+To learn React, check out the [React documentation](https://reactjs.org/).
