@@ -1,4 +1,3 @@
-import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetData } from '@hooks/useFetch'
 
@@ -80,15 +79,17 @@ const Followers = (props: {
             </li>
           </a>
         ))}
-        <a
-          href={`https://github.com/${userName}?tab=followers`}
-          target="_blank"
-          rel="opener noreferrer"
-        >
-          <li style={followerStyle.span}>
-            <b>+{noOfFollowers < 6 ? noOfFollowers : noOfFollowers - 5}</b>
-          </li>
-        </a>
+        {5 < noOfFollowers && (
+          <a
+            href={`https://github.com/${userName}?tab=followers`}
+            target="_blank"
+            rel="opener noreferrer"
+          >
+            <li style={followerStyle.span}>
+              <b>+{noOfFollowers < 6 ? noOfFollowers : noOfFollowers - 5}</b>
+            </li>
+          </a>
+        )}
       </ul>
     </>
   )

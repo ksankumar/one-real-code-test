@@ -1,21 +1,18 @@
 import { useQuery } from 'react-query'
 
-export const request = async (
-  url: string,
-  method: string = 'GET'
-): Promise<any> => {
-  const options = {
-    method,
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-    }
-  }
+export const request = async (url: string): Promise<any> => {
+  // const options = {
+  //   method,
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     Accept: 'application/json'
+  //   }
+  // }
   try {
-    let response = await fetch(url, options)
+    let response = await fetch(url)
     return await response.json()
-  } catch (error) {
-    return { error: error }
+  } catch (error: any) {
+    throw new Error(`Error: ${error.message}`)
   }
 }
 

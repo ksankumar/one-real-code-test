@@ -31,6 +31,7 @@ export default function Repositories(props: {
       setRepoData(data)
       setLoader(false)
     } catch (error) {
+      setLoader(false)
       setError(true)
     }
   }, [currentPage, repoEndPoint])

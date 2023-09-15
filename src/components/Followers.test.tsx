@@ -8,7 +8,7 @@ describe('Followers Component', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
-  
+
   it('displays followers data when loaded', async () => {
     // Mock the useGetData hook to return mockFollowersData
     require('@hooks/useFetch').useGetData.mockReturnValue({
@@ -16,7 +16,6 @@ describe('Followers Component', () => {
       isLoading: false,
       error: false
     })
-
     render(
       <Followers followersEndpoint="followers.json" noOfFollowers={23611} />
     )
@@ -24,7 +23,30 @@ describe('Followers Component', () => {
     await waitFor(() => {
       expect(screen.getByText('23.6K')).toBeInTheDocument()
       expect(followerIds).toHaveLength(followersData.length)
+      expect(followerIds.length).toBe(5)
     })
+
+    render(<Followers followersEndpoint="followers.json" noOfFollowers={236} />)
+    expect(screen.getByText('236')).toBeInTheDocument()
+    render(
+      <Followers
+        followersEndpoint="followers.json"
+        noOfFollowers={23611000000000}
+      />
+    )
+    expect(screen.getByText('23.6T')).toBeInTheDocument()
+    render(
+      <Followers followersEndpoint="followers.json" noOfFollowers={2361100} />
+    )
+    expect(screen.getByText('2.4M')).toBeInTheDocument()
+
+    render(
+      <Followers
+        followersEndpoint="followers.json"
+        noOfFollowers={2361100000}
+      />
+    )
+    expect(screen.getByText('2.4B')).toBeInTheDocument()
   })
 
   it('displays loading state while fetching data', () => {
