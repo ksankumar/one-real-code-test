@@ -5,8 +5,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "test:coverage": "react-app-rewired test --coverage",
+    "test": "react-app-rewired test --watchAll --detectOpenHandles",
+    "test:coverage": "react-app-rewired test --watchAll --coverage",
     "eject": "react-scripts eject"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 
 export default function Repositories(props: {
   repoCount: number
@@ -53,7 +53,10 @@ export default function Repositories(props: {
         <div className="card bg-soft shadow-soft border-light px-4">
           <ul className="list-group list-group-flush">
             <li className="list-group-item bg-soft pl-0">
-              <strong className="h5 card-title mt-3 pl-3" data-testid={`count-${repoCount}`}>
+              <strong
+                className="h5 card-title mt-3 pl-3"
+                data-testid={`count-${repoCount}`}
+              >
                 Repositories : {repoCount}
               </strong>
             </li>

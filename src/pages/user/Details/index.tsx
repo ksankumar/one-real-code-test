@@ -1,8 +1,7 @@
-import React from 'react'
 import './style.css'
 
 import { useParams } from 'react-router-dom'
-import useGetData from '@hooks/useFetch'
+import { useGetData } from '@hooks/useFetch'
 import Organizations from '@components/Organizations'
 import Followers from '@components/Followers'
 import Repositories from '@components/Repositories'
@@ -27,7 +26,10 @@ const Details = () => {
               alt={data.name}
             />
             <div className="image-content">
-              <div className="mb-2 user-title text-center text-primary" data-testid={data.name}>
+              <div
+                className="mb-2 user-title text-center text-primary"
+                data-testid={data.name}
+              >
                 {data.name}
               </div>
               <div className="h6 font-weight-normal text-white text-center">

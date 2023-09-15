@@ -1,6 +1,9 @@
 import { useQuery } from 'react-query'
 
-async function request(url: string, method: string = 'GET'): Promise<any> {
+export const request = async (
+  url: string,
+  method: string = 'GET'
+): Promise<any> => {
   const options = {
     method,
     headers: {
@@ -16,8 +19,6 @@ async function request(url: string, method: string = 'GET'): Promise<any> {
   }
 }
 
-const useGetData = (queryKey: string, dataUrl: string) => {
+export const useGetData = (queryKey: string, dataUrl: string) => {
   return useQuery([queryKey], () => request(dataUrl))
 }
-
-export default useGetData

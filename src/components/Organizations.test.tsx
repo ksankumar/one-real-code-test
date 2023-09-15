@@ -10,7 +10,7 @@ describe('Organization component', () => {
   })
   it('displays organization data when loaded', async () => {
     // Mock the useGetData hook to return mockOrganizationData
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       data: orgData,
       isLoading: false,
       error: false
@@ -25,7 +25,7 @@ describe('Organization component', () => {
 
   it('displays loading state while fetching data', async () => {
     // Mock the useGetData hook to indicate loading state
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       isLoading: true
     })
 
@@ -38,7 +38,7 @@ describe('Organization component', () => {
 
   it('displays error message when there is an error', async () => {
     // Mock the useGetData hook to indicate an error
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       error: true
     })
     render(<Organizations organizationsEndpoint="org.json" />)

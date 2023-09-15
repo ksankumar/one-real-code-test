@@ -11,7 +11,7 @@ describe('Followers Component', () => {
   
   it('displays followers data when loaded', async () => {
     // Mock the useGetData hook to return mockFollowersData
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       data: followersData,
       isLoading: false,
       error: false
@@ -29,7 +29,7 @@ describe('Followers Component', () => {
 
   it('displays loading state while fetching data', () => {
     // Mock the useGetData hook to indicate loading state
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       isLoading: true
     })
 
@@ -42,7 +42,7 @@ describe('Followers Component', () => {
 
   it('displays error message when there is an error', () => {
     // Mock the useGetData hook to indicate an error
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       error: true
     })
     render(

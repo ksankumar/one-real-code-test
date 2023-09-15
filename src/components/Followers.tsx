@@ -1,8 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import useGetData from '@hooks/useFetch'
+import { useGetData } from '@hooks/useFetch'
 
-const Followers = (props: { followersEndpoint: string; noOfFollowers: number }) => {
+const Followers = (props: {
+  followersEndpoint: string
+  noOfFollowers: number
+}) => {
   const { userName } = useParams()
   const { followersEndpoint, noOfFollowers } = props
   let { isLoading, error, data } = useGetData(

@@ -1,5 +1,4 @@
-import React from 'react'
-import useGetData from '@hooks/useFetch'
+import { useGetData } from '@hooks/useFetch'
 
 const Organizations = (props: { organizationsEndpoint: string }) => {
   const { organizationsEndpoint } = props

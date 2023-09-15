@@ -1,5 +1,4 @@
-import React from 'react'
-import useGetData from '@hooks/useFetch'
+import { useGetData } from '@hooks/useFetch'
 import { Link } from 'react-router-dom'
 import './style.css'
 

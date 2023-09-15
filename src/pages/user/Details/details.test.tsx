@@ -44,7 +44,7 @@ describe('User-Details component', () => {
   })
   it('displays user-details data when loaded', async () => {
     // Mock the useGetData hook to return mockUserData
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       data: userMockData,
       isLoading: false,
       error: false
@@ -65,7 +65,7 @@ describe('User-Details component', () => {
 
   it('displays loading state while fetching data', async () => {
     // Mock the useGetData hook to indicate loading state
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       isLoading: true
     })
 
@@ -78,7 +78,7 @@ describe('User-Details component', () => {
 
   it('displays error message when there is an error', async () => {
     // Mock the useGetData hook to indicate an error
-    require('@hooks/useFetch').default.mockReturnValue({
+    require('@hooks/useFetch').useGetData.mockReturnValue({
       error: true
     })
     render(<Details />)
