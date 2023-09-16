@@ -1,6 +1,9 @@
 import { render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event';
+import { MemoryRouter, Route } from 'react-router-dom';
 import Followers from '@components/Followers'
 import followersData from '@mock/followers.json'
+import { useGetData } from '@hooks/useFetch';
 
 jest.mock('@hooks/useFetch')
 

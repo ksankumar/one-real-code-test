@@ -1,0 +1,27 @@
+import React from 'react'
+import { render } from '@testing-library/react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { act } from 'react-dom/test-utils' // Import act for async rendering
+import App from './App' // Assuming your App component is in the same directory
+
+test('renders the app', async () => {
+  const root = document.createElement('div')
+  document.body.appendChild(root)
+ 
+  await act(async () => {
+    render(
+      <Router>
+        <App/>
+      </Router>,
+      { container: root }
+    )
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+  })
+
+  // You can add assertions to check if certain elements are present
+  // For example:
+  expect(root.querySelector('.container')).toBeInTheDocument()
+
+  // Clean up
+  document.body.removeChild(root)
+})

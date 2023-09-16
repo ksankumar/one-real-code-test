@@ -13,15 +13,6 @@ export default function Repositories(props: {
   const PER_PAGE = 10
   const PAGE_COUNT = Math.ceil(repoCount / PER_PAGE)
 
-  const linkStyle = {
-    textDecoration: 'underline',
-    color: 'blue',
-    cursor: 'pointer',
-    margin: '12px',
-    padding: 0,
-    border: 'none',
-    background: 'none'
-  }
   useMemo(async () => {
     try {
       let response: any = await fetch(
@@ -38,6 +29,16 @@ export default function Repositories(props: {
 
   if (showLoader) return <div>Loading...</div>
   if (showError) return <div>Error loading repositories data</div>
+
+  const linkStyle = {
+    textDecoration: 'underline',
+    color: 'blue',
+    cursor: 'pointer',
+    margin: '12px',
+    padding: 0,
+    border: 'none',
+    background: 'none'
+  }
 
   const dateFormat = (date: string) => {
     const options: any = {
@@ -88,15 +89,19 @@ export default function Repositories(props: {
         </div>
       </div>
       {PER_PAGE < repoCount && (
-        <div className="d-flex justify-center align-center mt-2">
+        <div
+          className="d-flex justify-center align-center mt-2"
+          data-testid="pagination"
+        >
           <button
             onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
             style={linkStyle}
+            data-testid="previous-button"
           >
             <b>Previous</b>
           </button>
           <span>
-            <b>{currentPage * 10}</b> of <b>{repoCount}</b>
+            <b data-testid="pagination-conent">{currentPage }</b> of <b>{PAGE_COUNT}</b>
           </span>
           {currentPage * 10 <= repoCount && (
             <button
@@ -104,6 +109,7 @@ export default function Repositories(props: {
                 currentPage < PAGE_COUNT && setCurrentPage(currentPage + 1)
               }
               style={linkStyle}
+              data-testid="next-button"
             >
               <b>Next</b>
             </button>
